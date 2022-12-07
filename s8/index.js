@@ -5,6 +5,18 @@ const sequelize = require("./models/index").sequelize;
 
 let port = 8081;
 
+const corsOptions = {
+	origin: true,
+	allowedHeaders: [
+		 "Content-Type",
+		 "Authorization",
+		 "Access-Control-Allow-Methods",
+		 "Access-Control-Request-Headers",
+	],
+	credentials: true,
+	enablePreflight: true,
+};
+
 app.use(express.json());
 
 app.use("/api", indexRouter)
